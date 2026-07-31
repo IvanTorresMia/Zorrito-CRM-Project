@@ -783,9 +783,46 @@ tr:last-child td {
     position: relative;
   }
 
+  .brand-block {
+    align-items: center;
+    display: flex;
+    gap: 12px;
+    justify-content: space-between;
+    padding: 14px 16px;
+  }
+
+  .brand-block img {
+    height: 30px;
+    max-width: 172px;
+  }
+
+  .brand-block p {
+    margin: 0;
+  }
+
   .nav-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    flex-direction: row;
+    gap: 8px;
+    overflow-x: auto;
+    padding: 10px 12px 12px;
+    scrollbar-width: thin;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .nav-item {
+    border-left: 0;
+    border-bottom: 3px solid transparent;
+    flex: 0 0 auto;
+    min-height: 42px;
+    padding: 9px 11px;
+  }
+
+  .nav-item.active {
+    border-bottom-color: var(--orange);
+  }
+
+  .nav-label {
+    white-space: nowrap;
   }
 
   .sidebar-footer {
@@ -802,6 +839,11 @@ tr:last-child td {
     justify-content: flex-start;
     width: 100%;
   }
+
+  .doc-grid,
+  .bench-grid {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  }
 }
 
 @media (max-width: 620px) {
@@ -809,6 +851,39 @@ tr:last-child td {
   .topbar {
     padding-left: 16px;
     padding-right: 16px;
+  }
+
+  .content {
+    padding-top: 20px;
+  }
+
+  .brand-block {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .nav-list {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .nav-item {
+    font-size: 12px;
+  }
+
+  .count {
+    display: none;
+  }
+
+  .topbar {
+    gap: 12px;
+    min-height: 0;
+    padding-top: 14px;
+  }
+
+  .topbar h1 {
+    font-size: 17px;
   }
 
   .search-box,
@@ -829,5 +904,55 @@ tr:last-child td {
     align-items: flex-end;
     flex-direction: column;
     gap: 6px;
+  }
+
+  .overview-grid,
+  .stat-grid,
+  .draft-grid,
+  .doc-grid,
+  .bench-grid,
+  .buyer-grid,
+  .field-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .spotlight,
+  .doc-card,
+  .accordion-body {
+    padding: 14px;
+  }
+
+  .accordion summary {
+    align-items: flex-start;
+    padding: 14px;
+  }
+
+  .tag-row {
+    gap: 5px;
+  }
+
+  .tag {
+    white-space: normal;
+  }
+
+  .photo-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .buyer-chip {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 380px) {
+  .content,
+  .topbar {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .photo-grid {
+    grid-template-columns: 1fr;
   }
 }
