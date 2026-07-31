@@ -58,7 +58,7 @@ export type OpenQuestion = {
   updated: string;
 };
 
-export const assetBase = "/source-data";
+export const assetBase = `${import.meta.env.BASE_URL}source-data`;
 
 export const drafts: DraftItem[] = [
   {
