@@ -201,6 +201,35 @@ select {
   justify-content: flex-end;
 }
 
+.language-toggle {
+  align-items: center;
+  background: #fbfaf7;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--ink-soft);
+  display: inline-flex;
+  gap: 4px;
+  height: 36px;
+  padding: 0 6px;
+}
+
+.language-toggle button {
+  background: transparent;
+  border: 0;
+  border-radius: 6px;
+  color: var(--ink-soft);
+  cursor: pointer;
+  font-size: 11px;
+  font-weight: 800;
+  height: 26px;
+  padding: 0 7px;
+}
+
+.language-toggle button.active {
+  background: var(--dark);
+  color: #fff;
+}
+
 .search-box {
   align-items: center;
   background: #fbfaf7;
@@ -887,10 +916,15 @@ tr:last-child td {
   }
 
   .search-box,
+  .language-toggle,
   .select-filter,
   .select-filter select,
   .search-box input {
     width: 100%;
+  }
+
+  .language-toggle {
+    justify-content: center;
   }
 
   .section-header,
